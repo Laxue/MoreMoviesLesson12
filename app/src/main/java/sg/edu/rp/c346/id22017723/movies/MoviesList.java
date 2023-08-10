@@ -53,18 +53,17 @@ public class MoviesList extends AppCompatActivity {
         });
 
 
-//            lvMovies.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//        @Override
-//        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//            data selectedMovie =  al.get(position);
-//            // Start the ThirdActivity and pass the selected song ID as an extra
-//            Intent intent = new Intent(MoviesList.this, EditActivity.class);
-//            intent.putExtra("Movie", (Serializable) selectedMovie);
-//            startActivity(intent);
-//
-//
-//        }
-//    });
+
+
+        lvMovies.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                data selectedMovie = al.get(position);
+                Intent intent = new Intent(MoviesList.this, EditActivity.class);
+                intent.putExtra("movie", selectedMovie); // Pass the selected movie object
+                startActivity(intent);
+            }
+        });
 
 
 }
